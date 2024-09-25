@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         // Assuming 'dockerhub-username' and 'dockerhub-password' are the IDs of the credentials
-        DOCKER_USERNAME = credentials('abdullaharif24') // Loads the Docker Hub username
-        DOCKER_PASSWORD = credentials('Abi112212') // Loads the Docker Hub password
+        DOCKER_USERNAME = credentials('dockerhub-username') // Loads the Docker Hub username
+        DOCKER_PASSWORD = credentials('dockerhub-password') // Loads the Docker Hub password
     }
     stages {
         stage('Build Docker Image') {
