@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pickle
 
 data = pd.read_csv('salary_data.csv')
-#variables
+#variables x and y
 X = data['YearsExperience'].values.reshape(-1, 1)  # Independent variable (Years of Experience)
 y = data['Salary'].values  # Dependent variable (salary)
 
