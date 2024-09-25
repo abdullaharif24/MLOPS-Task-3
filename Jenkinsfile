@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         // Assuming 'dockerhub-username' and 'dockerhub-password' are the IDs of the credentials
-        DOCKER_USERNAME = credentials('dockerhub-username') // Loads the Docker Hub username
-        DOCKER_PASSWORD = credentials('dockerhub-password') // Loads the Docker Hub password
+        DOCKER_USERNAME = credentials('abdullaharif24') // Loads the Docker Hub username
+        DOCKER_PASSWORD = credentials('Abi112212') // Loads the Docker Hub password
     }
     stages {
         stage('Build Docker Image') {
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Setup for Docker Hub credentials
-                    sh 'echo $Abi112212 | docker login --username $abdullaharif24 --password-stdin'
+                    sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
                     // Pushing the Docker image/
                     sh "docker push abdullaharif24/your_dockerhub_repo:${env.BUILD_ID}"
                 }
